@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tư Duy Tích Cực Mỗi Ngày</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #333;
+      --primary: #2196f3;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e5e7eb;
+      --primary: #38bdf8;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+      line-height: 1.8;
+      transition: all 0.3s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    h1 {
+      color: var(--primary);
+      margin: 20px 0;
+    }
+
+    .toggle {
+      float: right;
+      cursor: pointer;
+      font-size: 14px;
+      background: var(--card);
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    .quote {
+      background: var(--card);
+      padding: 20px;
+      border-left: 5px solid var(--primary);
+      margin-bottom: 20px;
+      border-radius: 6px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html">← Quay lại trang chủ</a>
+  <div class="toggle" onclick="toggleDark()">🌙 Dark Mode</div>
+
+  <h1>Tư Duy Tích Cực Mỗi Ngày</h1>
+
+  <div class="quote">
+    “Một tư duy tích cực không thay đổi thế giới,  
+    nhưng nó thay đổi cách ta bước đi trong thế giới ấy.”
+  </div>
+
+  <div class="quote">
+    “Đừng so sánh bản thân với người khác,  
+    hãy so sánh bạn của hôm nay với bạn của hôm qua.”
+  </div>
+
+  <div class="quote">
+    “Không ai sinh ra đã mạnh mẽ,  
+    chúng ta mạnh lên nhờ không bỏ cuộc.”
+  </div>
+
+  <div class="quote">
+    “Mỗi ngày trôi qua là một cơ hội mới  
+    để bạn trở thành phiên bản tốt hơn.”
+  </div>
+
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
