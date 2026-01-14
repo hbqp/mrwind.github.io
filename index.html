@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr Wind | Growth🌱</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="logo.jpg">
+</head>
+
+<body>
+
+<header class="hero">
+  <h1>Mr Wind</h1>
+  <p>“Dành cho những ai muốn trở nên tốt hơn mỗi ngày.”</p>
+</header>
+
+<!-- <nav class="navbar">
+  <a href="#gioithieu">Giới thiệu</a>
+  <a href="#blog">Blog</a>
+  <a href="#lienhe">Liên hệ</a>
+</nav> -->
+
+<section id="gioithieu" class="container">
+  <img src="avt.jpg" class="avatar">
+  <h2>Xin chào, tôi là Mr Wind 👋</h2>
+  <p>
+    Tôi chia sẻ hành trình phát triển bản thân và lan tỏa năng lượng tích cực
+    đến cộng đồng người trẻ.
+  </p>
+  <a href="gioithieu.html">Đọc thêm →</a>
+</section>
+
+<section id="blog" class="container">
+  <h2>Bài viết nổi bật</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://img.freepik.com/vector-gratis/concepto-abstracto-ambicion_335657-3013.jpg">
+      <h3>Bước Ra Khỏi Vùng An Toàn</h3>
+      <a href="baiviet1.html">Đọc thêm →</a>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfyudpJMU9t4UbC7cFgBYn6YiplOWuh5xsdQ&s">
+      <h3>Tư Duy Tích Cực Mỗi Ngày</h3>
+      <a href="baiviet2.html">Đọc thêm →</a>
+    </div>
+
+     <div class="card">
+      <img src="https://tbig.vn/wp-content/uploads/2021/06/ky-luat-la-suc-manh-6.jpg">
+      <h3>Sức Mạnh Của Kỷ Luật</h3>
+      <a href="baiviet3.html">Đọc thêm →</a>
+    </div>
+
+
+  </div>
+</section>
+
+<section id="lienhe" class="container">
+  <h2>Kết nối cùng tôi</h2>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Nhập danh tính" required>
+    <input type="email" id="email" placeholder="Nhập email" required>
+    <textarea id="message" placeholder="Gửi lời yêu thương" required></textarea>
+    <button type="submit">Gửi</button>
+  </form>
+
+  <p id="status"></p>
+</section>
+
+<footer>
+  © 2025 Mr Wind | Inspiring Growth 🌱
+  <div class="social-links">
+    <a href="https://www.facebook.com/hbqpp" target="_blank">Facebook</a>
+    <a href="https://github.com/hbqp" target="_blank">GitHub</a>
+    <a href="hbquocphong@gmail.com">Gmail</a>
+  </div>
+</footer>
+
+<!-- SCRIPT ĐÚNG CHUẨN -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    };
+
+    try {
+      const res = await fetch("/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      status.textContent = result.message;
+      form.reset();
+    } catch (err) {
+      status.textContent = "❌ Lỗi server";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
